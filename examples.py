@@ -3,7 +3,7 @@ import time
 
 import colorama
 
-from scrngV2 import random_nums
+from src.scrngV2 import random_nums
 
 
 def example_scrngV2():
