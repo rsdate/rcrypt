@@ -3,7 +3,7 @@ import time
 
 import colorama
 
-from ShadowCrypt.scrngV2.scrngV2 import random_nums
+import ShadowCrypt as sc
 
 colorama.init(autoreset=True)
 
@@ -65,7 +65,7 @@ def example_scrngV2():
     delay_print("First, I'll show you the base mode:")
     time.sleep(0.1)
     print(colorama.Style.BRIGHT + "============= GENERATION IN PROGRESS =============")
-    nums_base = random_nums(a=a, b=b, n=n)
+    nums_base = sc.random_nums(a=a, b=b, n=n)
     delay_print("And your numbers are: ", end="")
     time.sleep(0.5)
     delay_print(str(nums_base), delay=0.05)
@@ -74,7 +74,7 @@ def example_scrngV2():
     delay_print("Now, the pretty mode (the output speaks for itself):")
     time.sleep(0.1)
     print(colorama.Style.BRIGHT + "============= GENERATION IN PROGRESS =============")
-    _ = random_nums(a=a, b=b, n=n, mode="pretty")
+    _ = sc.random_nums(a=a, b=b, n=n, mode="pretty")
     time.sleep(0.5)
     delay_print("And that's all, folks! Thanks for using this tutorial.")
     delay_print(
@@ -83,4 +83,6 @@ def example_scrngV2():
     delay_print("Copyright © 2026 Rohan Date.", delay=0.05)
 
 
-example_scrngV2()
+if __name__ == "__main__":
+    print(dir(sc))
+    example_scrngV2()
