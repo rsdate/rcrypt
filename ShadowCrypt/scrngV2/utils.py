@@ -7,7 +7,6 @@ Methods:
     - `apply_*_gate`: Apply different types of quantum gates (single qubit, rotation, etc.)
     - `randlist`: Generate a random list of integers of length `n` from `a` to `b`
     - `generate_distinct_qubit_set`: Generate a list of distinct qubits
-    - `condense_list`: Condense a list into a string
     - `create_qc`: Generate a random quantum circuit
     - `generate_observables`: Generate `n_observables` different observables of length `n_qubits`
     - `convert_to_isa_circuit`: Converts a high-level quantum circuit into an ISA circuit
@@ -87,13 +86,6 @@ def generate_distinct_qubit_set(qubits: int, n: int) -> list[int]:
                 qubits_list.append(qubit_n)
                 break
     return qubits_list
-
-
-def condense_list(ls: list) -> str:
-    condensed: str = ""
-    for i in ls:
-        condensed += i
-    return condensed
 
 
 def create_qc(n: int) -> QuantumCircuit:
@@ -209,7 +201,7 @@ def generate_obeservables(n_qubits: int, n_observables: int) -> list[SparsePauli
         "Z",
     ]
     observables_labels = [
-        condense_list(random.choices(observables_list, k=n_qubits))
+        "".join(random.choices(observables_list, k=n_qubits))
         for i in range(n_observables)
     ]
     observables = [SparsePauliOp(label) for label in observables_labels]
