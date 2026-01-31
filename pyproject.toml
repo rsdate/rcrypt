@@ -48,10 +48,6 @@ notebook = [
 Homepage = "https://github.com/rsdate/ShadowCrypt"
 Issues = "https://github.com/rsdate/ShadowCrypt/issues"
 
-# [tool.poetry]
-# packages = [
-#    { include = "scrypt" },
-# ]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]

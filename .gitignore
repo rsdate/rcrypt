@@ -1,4 +1,4 @@
-notebooks/.ipynb_checkpoints
+notebooks
 __pycache__
 dist
 tests/rng_test
